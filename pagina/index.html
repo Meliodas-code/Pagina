@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spaghetti God - Tienda Mejorada</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">Spaghetti God</h1>
+            <nav class="nav">
+                <a href="#tienda">Tienda</a>
+                <a href="#ofertas">Ofertas</a>
+                <a href="#carrito">Carrito</a>
+                <a href="#reportes">Reportes</a>
+                <a href="#resenas">Reseñas</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>¡Mejora tu experiencia en Spaghetti God!</h2>
+            <p>Compra rangos, kits y llaves con grandes ventajas exclusivas. ¡Explora nuestras ofertas!</p>
+            <button onclick="scrollToTienda()">Explorar Tienda</button>
+        </div>
+    </section>
+
+    <!-- Sección de Tienda -->
+    <section id="tienda" class="productos-section">
+        <h2 class="section-title">Nuestros Productos</h2>
+
+        <!-- Rangos -->
+        <h3>Rangos</h3>
+        <div class="productos-grid">
+            <div class="producto">
+                <img src="rango_warrior.png" alt="Rango Warrior">
+                <h3>Rango Warrior</h3>
+                <p class="precio">20 Monedas</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito('Rango Warrior', 20)">Añadir al carrito</button>
+            </div>
+            <div class="producto">
+                <img src="rango_god.png" alt="Rango God">
+                <h3>Rango God</h3>
+                <p class="precio">40 Monedas</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito('Rango God', 40)">Añadir al carrito</button>
+            </div>
+            <div class="producto">
+                <img src="rango_king.png" alt="Rango King">
+                <h3>Rango King</h3>
+                <p class="precio">60 Monedas</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito('Rango King', 60)">Añadir al carrito</button>
+            </div>
+        </div>
+
+        <!-- Llaves -->
+        <h3>Llaves</h3>
+        <div class="productos-grid">
+            <div class="producto">
+                <img src="llave_premium.png" alt="Llave Premium">
+                <h3>Llave Premium</h3>
+                <p class="precio">15 Monedas</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito('Llave Premium', 15)">Añadir al carrito</button>
+            </div>
+            <div class="producto">
+                <img src="llave_legendaria.png" alt="Llave Legendaria">
+                <h3>Llave Legendaria</h3>
+                <p class="precio">30 Monedas</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito('Llave Legendaria', 30)">Añadir al carrito</button>
+            </div>
+            <div class="producto">
+                <img src="epic-key.png" alt="Llave Épica">
+                <h3>Llave Épica</h3>
+                <p class="precio">50 Monedas</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito('Llave Épica', 50)">Añadir al carrito</button>
+            </div>
+        </div>
+
+        <!-- Kits -->
+        <h3>Kits</h3>
+        <div class="productos-grid">
+            <div class="producto">
+                <img src="kit_basico.png" alt="Kit Básico">
+                <h3>Kit Básico</h3>
+                <p class="precio">10 Monedas</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito('Kit Básico', 10)">Añadir al carrito</button>
+            </div>
+            <div class="producto">
+                <img src="kit_avanzado.png" alt="Kit Avanzado">
+                <h3>Kit Avanzado</h3>
+                <p class="precio">25 Monedas</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito('Kit Avanzado', 25)">Añadir al carrito</button>
+            </div>
+            <div class="producto">
+                <img src="epic-kit.png" alt="Epic Kit">
+                <h3>Epic Kit</h3>
+                <p class="precio">50 Monedas</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito('Epic Kit', 50)">Añadir al carrito</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Ofertas -->
+    <section id="ofertas" class="ofertas-section">
+        <h2 class="section-title">¡Ofertas Especiales!</h2>
+        <div class="oferta">
+            <p>¡Consigue el Rango King con un 20% de descuento por tiempo limitado!</p>
+            <p>Precio especial: 48 Monedas</p>
+        </div>
+    </section>
+
+    <!-- Sección de Reportes -->
+    <section id="reportes" class="reportes-section">
+        <h2 class="section-title">Reportar un Problema</h2>
+        <form id="form-reportes">
+            <input type="text" id="reporte-nombre" placeholder="Tu nombre">
+            <textarea id="reporte-texto" placeholder="Escribe tu reporte aquí"></textarea>
+            <button type="submit" onclick="enviarReporte()">Enviar Reporte</button>
+        </form>
+    </section>
+
+    <!-- Sección de Reseñas -->
+    <section id="resenas" class="resenas-section">
+        <h2 class="section-title">Escribe una Reseña</h2>
+        <form id="form-resenas">
+            <input type="text" id="resena-nombre" placeholder="Tu nombre">
+            <textarea id="resena-texto" placeholder="Escribe tu reseña aquí"></textarea>
+            <button type="submit" onclick="enviarResena()">Enviar Reseña</button>
+        </form>
+        <div id="resenas-lista">
+            <!-- Aquí aparecerán las reseñas -->
+        </div>
+    </section>
+
+    <!-- Sección de Carrito -->
+    <section id="carrito" class="carrito-section">
+        <h2>Carrito de Compras</h2>
+        <ul id="carrito-lista"></ul>
+        <p><strong>Total:</strong> <span id="total">0</span> Monedas</p>
+        <input id="nombre-minecraft" type="text" placeholder="Tu nombre de Minecraft">
+        <button class="btn-finalizar" onclick="finalizarCompra()">Finalizar Compra</button>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 Spaghetti God. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
